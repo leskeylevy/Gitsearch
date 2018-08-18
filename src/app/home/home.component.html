@@ -1,12 +1,16 @@
 <div class="header">
   <nav class="navbar fixed-top navbar-light bg-dark">
     <a class="navbar-brand" href="#">GITSEARCH APP</a>
+    <app-search></app-search>
   </nav>
 </div>
 <hr>
 <div class="container">
-  <h1>{{response.login}}</h1>
   <img src="{{response.avatar_url}}" alt="">
+  <h1>BIO</h1>
+  <h1>Username:{{response.login}}</h1>
+  <h1>Email:leskeylevy@gmail.com</h1>
+  <h1>Location:Nairobi</h1>
   <h2>Here is a list of my repositories.</h2>
   <ul *ngFor='let i=index'>
     <li>{{repos$.data[i].name}}</li>
