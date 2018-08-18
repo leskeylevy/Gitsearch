@@ -38,10 +38,7 @@ export class GithubRequestService {
     })
     return promise
 
-    repositories(){
-      return this.http.get("https://api.github.com/users/leskeylevy/repositories?access_token=b182da05cda24004ea9e522d63544ac79defc478");
-    }
-
   }
+
 
 }

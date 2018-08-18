@@ -1,12 +1,14 @@
 <div class="header">
   <nav class="navbar fixed-top navbar-light bg-dark">
     <a class="navbar-brand" href="#">GITSEARCH APP</a>
-    <button type="button" name="button">SEARCH</button>
   </nav>
 </div>
 <hr>
 <div class="container">
   <h1>{{response.login}}</h1>
   <img src="{{response.avatar_url}}" alt="">
-  <p>Here is a list of my repositories</p>
+  <h2>Here is a list of my repositories.</h2>
+  <ul *ngFor='let i=index'>
+    <li>{{repos$.data[i].name}}</li>
+  </ul>
 </div>

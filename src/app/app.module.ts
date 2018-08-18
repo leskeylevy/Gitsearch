@@ -5,11 +5,13 @@ import { GithubRequestService } from './github-http/github-request.service'
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
