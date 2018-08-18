@@ -1,7 +1,7 @@
 <div class="container">
   <form class="" action="index.html" method="post">
-    <input type="text" class="form-control" placeholder="search">
-    <button type="submit" name="button">SEARCH</button>
+    <input type="text" class="form-control" placeholder="search" #input name="input">
+    <button type="button" (click)="searchgh(input)" value="search"><a routerLink='/search' routerLinkActive='active'>SEARCH</a></button>
   </form>
 
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-search',
@@ -7,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  search$;
 
+  constructor(private http: HttpClient) { }
+
+  searchgh(input) {
+    this.http.get('https://api.github.com/search/user?q=' + input.value).subscribe(result => {
+      this.search$ = result.items;
+      console.log(search$)
+    })
+  }
   ngOnInit() {
   }
 
