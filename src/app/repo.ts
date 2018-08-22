@@ -1,5 +1,6 @@
 export class Repo {
   constructor(
-    public repo: any
+    public repo_url: string,
+    public name: string
   ) { }
 }

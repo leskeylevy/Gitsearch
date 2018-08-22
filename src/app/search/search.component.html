@@ -3,6 +3,6 @@
     <input type="text" class="form-control" placeholder="search" #input name="input">
     <button type="button" (click)="searchgh(input)" value="search"><a routerLink='/search' routerLinkActive='active'>SEARCH</a></button>
   </form>
-  <!-- <p>{{search$.login}}</p> -->
-  <!-- <p>{{search$.avatar_url}}</p> -->
+  <p *ngFor="let i=index;let search of search$">{{result[i].login}}</p>
+  <p>{{result.avatar_url}}</p>
 </div>

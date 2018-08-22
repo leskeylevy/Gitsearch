@@ -10,7 +10,6 @@ import { GithubRequestService } from '../github-http/github-request.service'
 export class HomeComponent implements OnInit {
 
   response;
-  repos$;
 
   constructor(private http: HttpClient, private service: GithubRequestService) { }
 
@@ -20,16 +19,16 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.service.githubRequest()
     this.response = this.service.response
+    this.service.repos()
+    this.response = this.service.response
     // console.log(response.login);
 
-    this.http.get('https://api.github.com/users/leskeylevy/repos?access_token=b182da05cda24004ea9e522d63544ac79defc478').subscribe(
-      data => {
-        this.repos$ = data
-        console.log(data[1].name)
-        // console.log(data.data[1].id);
+    // this.http.get('https://api.github.com/users/leskeylevy/repos?access_token=b182da05cda24004ea9e522d63544ac79defc478').subscribe(
+    //   data => {
+    //     this.repos$ = data
+    //     console.log(data[1].name)
+    // console.log(data.data[1].id);
 
-      }
-    )
   }
 
 }

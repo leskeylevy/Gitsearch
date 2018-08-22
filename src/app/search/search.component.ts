@@ -13,9 +13,10 @@ export class SearchComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   searchgh(input) {
-    this.http.get('https://api.github.com/search/users?q=' + input.value).subscribe(result => {
+    console.log(input.value)
+    this.http.get('https://api.github.com/users/' + input.value + '/repos?access_token=b182da05cda24004ea9e522d63544ac79defc478').subscribe(result => {
       this.search$ = result;
-      console.log(result)
+      console.log(this.search$)
     })
   }
   ngOnInit() {
